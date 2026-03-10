@@ -1,0 +1,165 @@
+:root {
+  --bg: #0a0612;
+  --bg-subtle: #0e0a18;
+  --surface: rgba(26, 20, 40, 0.6);
+  --surface-hover: rgba(36, 28, 52, 0.8);
+  --text: #e8e6e3;
+  --text-muted: #b8b4c4;
+  --accent: #7c6cf6;
+  --accent-hover: #9588f7;
+  --accent-soft: rgba(124, 108, 246, 0.2);
+  --cosmic-purple: rgba(88, 28, 135, 0.5);
+  --cosmic-blue: rgba(59, 48, 163, 0.4);
+  --yes: #4ade80;
+  --no: #f87171;
+  --dunno: #fbbf24;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 40px rgba(124, 108, 246, 0.15);
+  --glass-bg: rgba(18, 14, 28, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ========== Animated scan background ========== */
+.app-wrap {
+  position: relative;
+  min-height: 100vh;
+}
+
+.scan-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Base gradient layer – slow drift */
+.scan-bg-gradient {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 20%, var(--cosmic-purple), transparent 45%),
+    radial-gradient(ellipse 70% 50% at 70% 30%, var(--cosmic-blue), transparent 40%),
+    radial-gradient(ellipse 60% 50% at 50% 80%, rgba(124, 108, 246, 0.15), transparent 45%),
+    radial-gradient(ellipse 50% 40% at 60% 50%, rgba(99, 102, 241, 0.12), transparent 35%);
+  animation: scanGradientMove 18s ease-in-out infinite;
+  opacity: 0.95;
+}
+
+/* Central pulse – “scanning” feel */
+.scan-bg-pulse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width:  min(120vmax, 800px);
+  height: min(120vmax, 800px);
+  margin-left: min(-60vmax, -400px);
+  margin-top:  min(-60vmax, -400px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 108, 246, 0.08) 0%, transparent 60%);
+  animation: scanPulse 4s ease-in-out infinite;
+}
+
+/* Horizontal scan line */
+.scan-bg-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(124, 108, 246, 0.4), transparent);
+  box-shadow: 0 0 12px rgba(124, 108, 246, 0.3);
+  animation: scanLine 6s linear infinite;
+}
+
+/* Floating orbs – neural / thought bubbles */
+.scan-bg-orbs {
+  position: absolute;
+  inset: 0;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(124, 108, 246, 0.35), rgba(88, 28, 135, 0.15));
+  filter: blur(1px);
+  animation: orbFloat 12s ease-in-out infinite;
+}
+
+.orb-1 { width: 80px;  height: 80px;  left: 15%; top: 20%;  animation-duration: 14s; animation-delay: 0s; }
+.orb-2 { width: 50px;  height: 50px;  left: 75%; top: 15%;  animation-duration: 11s; animation-delay: -2s; }
+.orb-3 { width: 60px;  height: 60px;  left: 50%; top: 70%;  animation-duration: 16s; animation-delay: -4s; }
+.orb-4 { width: 40px;  height: 40px;  left: 25%; top: 60%;  animation-duration: 13s; animation-delay: -1s; }
+.orb-5 { width: 70px;  height: 70px;  left: 80%; top: 75%;  animation-duration: 15s; animation-delay: -3s; }
+
+/* Stars – gentle drift */
+.scan-bg-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.45), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.35), transparent),
+    radial-gradient(2px 2px at 50px 160px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.35), transparent),
+    radial-gradient(2px 2px at 130px 80px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1.5px 1.5px at 250px 50px, rgba(255,255,255,0.45), transparent),
+    radial-gradient(1.5px 1.5px at 300px 180px, rgba(255,255,255,0.35), transparent),
+    radial-gradient(2px 2px at 80px 200px, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 200px 100px, rgba(255,255,255,0.35), transparent),
+    radial-gradient(2px 2px at 280px 220px, rgba(255,255,255,0.3), transparent);
+  background-size: 320px 240px;
+  animation: starsDrift 25s linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes scanGradientMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(3%, -2%) scale(1.02); }
+  66%      { transform: translate(-2%, 2%) scale(0.98); }
+}
+
+@keyframes scanPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.95); }
+  50%      { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes scanLine {
+  0%   { top: 0; opacity: 0.3; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.8; }
+  100% { top: 100%; opacity: 0.3; }
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  25%      { transform: translate(15px, -20px) scale(1.1); opacity: 0.8; }
+  50%      { transform: translate(-10px, 10px) scale(0.95); opacity: 0.5; }
+  75%      { transform: translate(-20px, -10px) scale(1.05); opacity: 0.7; }
+}
+
+@keyframes starsDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: -320px -240px; }
+}
