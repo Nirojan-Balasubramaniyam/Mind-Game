@@ -1,4 +1,4 @@
-const API_BASE = '/api';
+const API_BASE = '/mind-game-production.up.railway.app';
 
 async function request(path, options = {}) {
   const res = await fetch(`${API_BASE}${path}`, {
