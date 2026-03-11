@@ -25,7 +25,7 @@ export default function App() {
       <header className="app-header">
         <div className="header-brand">
           <img
-            src="/logo.png"
+            src="/Mind-Game/logo.png"
             alt="Uncorn Connected Apps"
             className="brand-logo"
             onError={(e) => { e.target.style.display = 'none'; e.target.nextElementSibling?.classList.add('visible'); }}
@@ -51,7 +51,7 @@ export default function App() {
         </main>
       </div>
       <footer className="app-footer">
-        <img src="/logo.png" alt="" className="footer-logo" onError={(e) => { e.target.style.display = 'none'; }} />
+        <img src="/Mind-Game/logo.png" alt="" className="footer-logo" onError={(e) => { e.target.style.display = 'none'; }} />
         <span>Uncorn Connected Apps</span>
       </footer>
       </div>
