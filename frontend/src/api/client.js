@@ -1,4 +1,8 @@
-const API_BASE = '/api';
+const DEFAULT_PROD_API_BASE = 'https://mind-game-production.up.railway.app/api';
+const API_BASE = (
+  import.meta.env.VITE_API_BASE ||
+  (import.meta.env.DEV ? '/api' : DEFAULT_PROD_API_BASE)
+).replace(/\/$/, '');
 
 async function request(path, options = {}) {
   const res = await fetch(`${API_BASE}${path}`, {
