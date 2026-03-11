@@ -1,8 +1,116 @@
 [
   {
+    "sessionId": "sess_1773145",
+    "durationSeconds": 46,
+    "questionCount": 8,
+    "completedAt": "2026-03-10T12:19:35.670Z"
+  },
+  {
+    "sessionId": "sess_1773142",
+    "durationSeconds": 28,
+    "questionCount": 10,
+    "completedAt": "2026-03-10T11:29:10.746Z"
+  },
+  {
+    "sessionId": "sess_1773143",
+    "durationSeconds": 51,
+    "questionCount": 10,
+    "completedAt": "2026-03-10T11:54:11.332Z"
+  },
+  {
+    "sessionId": "sess_1773141",
+    "durationSeconds": 55,
+    "questionCount": 10,
+    "completedAt": "2026-03-10T11:22:17.556Z"
+  },
+  {
+    "sessionId": "sess_1773147",
+    "durationSeconds": 71,
+    "questionCount": 10,
+    "completedAt": "2026-03-10T12:57:28.742Z"
+  },
+  {
+    "sessionId": "sess_1773144",
+    "durationSeconds": 73,
+    "questionCount": 12,
+    "completedAt": "2026-03-10T12:13:03.374Z"
+  },
+  {
+    "sessionId": "sess_1773147",
+    "durationSeconds": 100,
+    "questionCount": 12,
+    "completedAt": "2026-03-10T12:54:06.356Z"
+  },
+  {
+    "sessionId": "sess_1773147",
+    "durationSeconds": 68,
+    "questionCount": 14,
+    "completedAt": "2026-03-10T12:56:02.351Z"
+  },
+  {
+    "sessionId": "sess_1773230",
+    "durationSeconds": 75,
+    "questionCount": 14,
+    "completedAt": "2026-03-11T11:56:15.231Z"
+  },
+  {
+    "sessionId": "sess_1773230",
+    "durationSeconds": 304,
+    "questionCount": 14,
+    "completedAt": "2026-03-11T12:09:18.832Z"
+  },
+  {
+    "sessionId": "sess_1773138",
+    "durationSeconds": 3053,
+    "questionCount": 16,
+    "completedAt": "2026-03-10T11:20:35.679Z"
+  },
+  {
+    "sessionId": "sess_1773143",
+    "durationSeconds": 80,
+    "questionCount": 17,
+    "completedAt": "2026-03-10T11:52:34.983Z"
+  },
+  {
+    "sessionId": "sess_1773143",
+    "durationSeconds": 83,
+    "questionCount": 22,
+    "completedAt": "2026-03-10T12:00:36.330Z"
+  },
+  {
+    "sessionId": "sess_1773230",
+    "durationSeconds": 265,
+    "questionCount": 25,
+    "completedAt": "2026-03-11T12:03:53.663Z"
+  },
+  {
+    "sessionId": "sess_1773142",
+    "durationSeconds": 89,
+    "questionCount": 26,
+    "completedAt": "2026-03-10T11:30:49.663Z"
+  },
+  {
     "sessionId": "sess_1773130",
     "durationSeconds": 241,
     "questionCount": 26,
     "completedAt": "2026-03-10T08:15:36.212Z"
+  },
+  {
+    "sessionId": "sess_1773137",
+    "durationSeconds": 103,
+    "questionCount": 28,
+    "completedAt": "2026-03-10T10:17:33.993Z"
+  },
+  {
+    "sessionId": "sess_1773137",
+    "durationSeconds": 116,
+    "questionCount": 32,
+    "completedAt": "2026-03-10T10:14:07.041Z"
+  },
+  {
+    "sessionId": "sess_1773136",
+    "durationSeconds": 190,
+    "questionCount": 39,
+    "completedAt": "2026-03-10T10:03:03.997Z"
   }
 ]
