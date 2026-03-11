@@ -11,16 +11,22 @@ async function request(path, options = {}) {
 }
 
 export const gameApi = {
-  start(sessionId = null) {
+  start(theme, sessionId = null) {
     return request('/game/start', {
       method: 'POST',
-      body: JSON.stringify(sessionId ? { sessionId } : {}),
+      body: JSON.stringify(sessionId ? { sessionId, theme } : { theme }),
     });
   },
   answer(sessionId, answer) {
     return request('/game/answer', {
       method: 'POST',
       body: JSON.stringify({ sessionId, answer }),
+    });
+  },
+  reviseAnswer(sessionId, turnIndex, answer) {
+    return request('/game/revise-answer', {
+      method: 'POST',
+      body: JSON.stringify({ sessionId, turnIndex, answer }),
     });
   },
   feedback(guessedAnswer, correctAnswer) {
@@ -42,3 +48,14 @@ export const leaderboardApi = {
     return request(`/leaderboard?limit=${limit}`);
   },
 };
+
+/** Fetch image URL for a guessed answer (e.g. "dog"). Returns { url } or { url: null } on 404. */
+export async function fetchAnswerImage(query) {
+  if (!query || !String(query).trim()) return { url: null };
+  try {
+    const res = await fetch(`${API_BASE}/image?q=${encodeURIComponent(String(query).trim())}`);
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.url) return { url: data.url };
+  } catch (_) {}
+  return { url: null };
+}
