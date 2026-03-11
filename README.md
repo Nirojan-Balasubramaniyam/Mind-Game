@@ -6,7 +6,7 @@ A web game where you think of something (animal, job, place, or thing) and the A
 
 - **Frontend:** React + Vite
 - **Backend:** Node.js + Express
-- **AI:** Google Gemini (gemini-1.5-flash) or OpenAI (GPT-4o-mini)
+- **AI:** Google Gemini or OpenAI
 - **Communication:** REST API
 
 ## Project Structure
@@ -50,12 +50,13 @@ Mind-Game/
 cd backend
 cp .env.example .env
 # Edit .env: set either GEMINI_API_KEY or OPENAI_API_KEY
+# Optional: set OPENAI_MODEL, OPENAI_ENABLE_WEB_SEARCH, or GEMINI_MODEL
 npm install
 npm run dev
 ```
 
 - **Gemini (recommended, free tier):** Get a key at [Google AI Studio](https://aistudio.google.com/apikey) and set `GEMINI_API_KEY=your_key`.
-- **OpenAI:** Set `OPENAI_API_KEY=sk-...` to use GPT-4o-mini.
+- **OpenAI:** Set `OPENAI_API_KEY=sk-...`. You can also set `OPENAI_MODEL` and `OPENAI_ENABLE_WEB_SEARCH=true|false`.
 
 API runs at **http://localhost:3001**.
 
@@ -180,7 +181,7 @@ GET /api/leaderboard?limit=10
 
 - **System prompt:** Instructs the model to ask one yes/no question at a time and to output a guess as JSON when confident: `{"action":"guess","answer":"...","confidence":75}`.
 - **Context:** Full Q&A history is sent each turn; up to 10 recent “learned” correct answers (from wrong guesses) are added to the system prompt to avoid repeating mistakes.
-- **Model:** `gpt-4o-mini` for low latency and cost; you can change it in `backend/src/services/ai.js`.
+- **Model/config:** Defaults are `OPENAI_MODEL=gpt-5.2`, `OPENAI_ENABLE_WEB_SEARCH=true`, and `GEMINI_MODEL=gemini-2.0-flash`. You can override them in `backend/.env`.
 
 ## Extending
 
