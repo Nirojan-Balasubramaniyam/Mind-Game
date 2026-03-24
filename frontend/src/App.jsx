@@ -26,12 +26,12 @@ export default function App() {
         <div className="header-brand">
           <img
             src="/Mind-Game/logo.png"
-            alt="Uncorn Connected Apps"
+            alt="Unicorn Connected Apps"
             className="brand-logo"
             onError={(e) => { e.target.style.display = 'none'; e.target.nextElementSibling?.classList.add('visible'); }}
           />
           <span className="brand-logo-fallback" aria-hidden="true">◆</span>
-          <span className="company-name">Uncorn Connected Apps</span>
+          <span className="company-name">Unicorn Connected Apps</span>
         </div>
       </header>
       <div className="glass-card">
@@ -52,7 +52,7 @@ export default function App() {
       </div>
       <footer className="app-footer">
         <img src="/Mind-Game/logo.png" alt="" className="footer-logo" onError={(e) => { e.target.style.display = 'none'; }} />
-        <span>Uncorn Connected Apps</span>
+        <span>Unicorn Connected Apps</span>
       </footer>
       </div>
     </div>
